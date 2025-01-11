@@ -3,23 +3,23 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const images = [
   {
-    src: 'public/images/landscape/pexels-bri-schneiter-28802-346529.jpg',
+    src: './images/landscape/pexels-bri-schneiter-28802-346529.jpg',
     alt: 'Landscape photograph by Bri Schneiter'
   },
   {
-    src: 'public/images/landscape/pexels-pixabay-247599.jpg',
+    src: './images/landscape/pexels-pixabay-247599.jpg',
     alt: 'Landscape photograph by Pixabay'
   },
   {
-    src: 'public/images/landscape/pexels-pixabay-462162.jpg',
+    src: './images/landscape/pexels-pixabay-462162.jpg',
     alt: 'Landscape photograph by Pixabay'
   },
   {
-    src: 'public/images/landscape/pexels-pripicart-620337.jpg',
+    src: './images/landscape/pexels-pripicart-620337.jpg',
     alt: 'Landscape photograph by Tobi'
   },
   {
-    src: 'public/images/landscape/pexels-samandgos-709552.jpg',
+    src: './images/landscape/pexels-samandgos-709552.jpg',
     alt: 'Landscape photograph by Ian Turnell'
   },
 ];
@@ -34,7 +34,7 @@ let timer;
 function startTimer() {
   timer = setInterval(() => {
     nextSlide();
-  }, 3000);
+  }, 5000);
 }
 
 function stopTimer() {
@@ -47,10 +47,10 @@ function nextSlide() {
 </script>
 
 <template>
-  <div class="w-full flex justify-center -z-50">
-    <div v-for="(image, index) in images" :key="index" class="flex flex-col h-full overflow-hidden absolute top-0 left-0">
+  <div class="flex justify-center -z-50">
+    <div v-for="(image, index) in images" :key="index" class="flex w-full h-full overflow-hidden absolute top-0 left-0">
       <Transition>
-        <img :src="image.src" :alt="image.alt" v-if="index === currentIndex" class="object-cover" />
+        <img :src="image.src" :alt="image.alt" v-if="index === currentIndex" class="w-full object-cover" />
       </Transition>
     </div>
   </div>
