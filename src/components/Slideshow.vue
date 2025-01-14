@@ -1,28 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import type { Image } from '../types/Image.ts'
 
-const images = [
-  {
-    src: './images/landscape/pexels-bri-schneiter-28802-346529.jpg',
-    alt: 'Landscape photograph by Bri Schneiter'
-  },
-  {
-    src: './images/landscape/pexels-pixabay-247599.jpg',
-    alt: 'Landscape photograph by Pixabay'
-  },
-  {
-    src: './images/landscape/pexels-pixabay-462162.jpg',
-    alt: 'Landscape photograph by Pixabay'
-  },
-  {
-    src: './images/landscape/pexels-pripicart-620337.jpg',
-    alt: 'Landscape photograph by Tobi'
-  },
-  {
-    src: './images/landscape/pexels-samandgos-709552.jpg',
-    alt: 'Landscape photograph by Ian Turnell'
-  },
-];
+const props = defineProps<{
+  images: Image[],
+  timerLength: number
+}>();
 
 onMounted(() => startTimer());
 
@@ -34,7 +17,7 @@ let timer;
 function startTimer() {
   timer = setInterval(() => {
     nextSlide();
-  }, 5000);
+  }, props.timerLength);
 }
 
 function stopTimer() {
@@ -42,13 +25,13 @@ function stopTimer() {
 }
 
 function nextSlide() {
-  currentIndex.value = (currentIndex.value + 1) % images.length;
+  currentIndex.value = (currentIndex.value + 1) % props.images.length;
 }
 </script>
 
 <template>
   <div class="flex justify-center -z-50">
-    <div v-for="(image, index) in images" :key="index" class="flex w-full h-full overflow-hidden absolute top-0 left-0">
+    <div v-for="(image, index) in props.images" :key="index" class="flex w-full h-full overflow-hidden absolute top-0 left-0">
       <Transition>
         <img :src="image.src" :alt="image.alt" v-if="index === currentIndex" class="w-full object-cover" />
       </Transition>
