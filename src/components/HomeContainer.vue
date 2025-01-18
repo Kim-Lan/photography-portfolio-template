@@ -24,11 +24,14 @@ function closeGallery() {
 
 <template>
   <div class="w-full h-full overflow-hidden p-4 md:p-6 gap-2 md:gap-4 flex flex-col justify-end md:grid home-grid">
+    <!-- Gallery -->
     <div class="overflow-y-scroll rounded-lg md:col-span-2">
       <Transition>
         <GalleryContainer v-if="showGallery" @closeGalleryClicked="closeGallery" :images="currentGallery" />
       </Transition>
     </div>
+
+    <!-- Book Now button -->
     <div class="flex flex-col justify-end align-center p-0 lg:p-8 md:col-span-1 lg:col-start-2">
       <Button append-icon="fa-solid fa-chevron-right"
         class="text-3xl p-4"
@@ -37,6 +40,8 @@ function closeGallery() {
         Book Now
       </Button>
     </div>
+
+    <!-- Side buttons -->
     <div class="md:col-span-1 lg:row-start-1 lg:col-start-3 flex flex-wrap md:justify-end lg:justify-start md:flex-col gap-2">
       <Button @click="onLandscapesButtonClicked" prepend-icon="fa-solid fa-tree" class="text-xl px-4 py-2 flex-1 md:flex-none">Landscapes</Button>
       <Button @click="onPortraitsButtonClicked" prepend-icon="fa-solid fa-user" class="text-xl px-4 py-2 flex-1 md:flex-none">Portraits</Button>

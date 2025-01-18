@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <div class="absolute w-full h-full bg-gray-900 bg-opacity-80 flex justify-center">
     <div class="w-fit my-auto bg-white rounded-lg">

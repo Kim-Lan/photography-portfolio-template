@@ -10,7 +10,6 @@ const props = defineProps<{
 
 <template>
   <div class="bg-white rounded-lg shadow-md shadow-gray-800">
-
     <!-- Close Gallery button -->
     <div class="flex justify-end">
       <div
