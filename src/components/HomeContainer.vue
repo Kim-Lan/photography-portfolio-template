@@ -25,7 +25,7 @@ function closeGallery() {
 <template>
   <div class="w-full h-full overflow-hidden p-4 md:p-6 gap-2 md:gap-4 flex flex-col justify-end md:grid home-grid">
     <!-- Gallery -->
-    <div class="overflow-y-scroll rounded-lg md:col-span-2">
+    <div class="overflow-y-scroll hide-scroll rounded-lg md:col-span-2">
       <Transition>
         <GalleryContainer v-if="showGallery" @closeGalleryClicked="closeGallery" :images="currentGallery" />
       </Transition>
@@ -51,6 +51,17 @@ function closeGallery() {
 </template>
 
 <style>
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scroll {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 @media (min-width: 768px) {
   .home-grid {
     grid-template-columns: 1fr 1fr;
