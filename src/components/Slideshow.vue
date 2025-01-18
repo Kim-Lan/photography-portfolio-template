@@ -12,7 +12,7 @@ onMounted(() => startTimer());
 onUnmounted(() => stopTimer());
 
 const currentIndex = ref(0);
-let timer: NodeJS.Timeout;
+let timer: ReturnType<typeof setInterval>;
 
 function startTimer() {
   timer = setInterval(() => {
