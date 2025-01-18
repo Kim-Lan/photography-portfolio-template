@@ -7,12 +7,12 @@ import { landscapesGallery, portraitsGallery } from '../data/galleryImages.ts'
 const showGallery = ref(false);
 const currentGallery = ref(landscapesGallery);
 
-function onLandscapesButtonClicked(event) {
+function onLandscapesButtonClicked(event: any) {
   currentGallery.value = landscapesGallery;
   showGallery.value = true;
 }
 
-function onPortraitsButtonClicked(event) {
+function onPortraitsButtonClicked(event: any) {
   currentGallery.value = portraitsGallery;
   showGallery.value = true;
 }
