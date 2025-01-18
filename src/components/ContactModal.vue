@@ -1,6 +1,6 @@
 <template>
-  <div class="absolute w-full h-full bg-gray-900 bg-opacity-80 flex justify-center">
-    <div class="w-fit my-auto bg-white rounded-lg">
+  <div class="absolute w-full h-full bg-gray-900 bg-opacity-80 flex justify-center" @click="$emit('closeModalClicked')">
+    <div class="w-fit my-auto bg-white rounded-lg" @click.stop="">
       <!-- Close Modal button -->
       <div class="flex justify-end">
         <div
