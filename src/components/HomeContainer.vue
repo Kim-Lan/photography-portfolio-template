@@ -30,16 +30,18 @@ function closeGallery() {
       </Transition>
     </div>
     <div class="flex flex-col justify-end align-center p-0 lg:p-8 md:col-span-1 lg:col-start-2">
-      <a href="https://github.com/Kim-Lan" target="_blank">
-        <Button append-icon="fa-solid fa-chevron-right" class="text-3xl p-4">Book Now</Button>
-      </a>
+      <Button append-icon="fa-solid fa-chevron-right"
+        class="text-3xl p-4"
+        @click="$emit('bookButtonClicked')"
+      >
+        Book Now
+      </Button>
     </div>
     <div class="md:col-span-1 lg:row-start-1 lg:col-start-3 flex flex-wrap md:justify-end lg:justify-start md:flex-col gap-2">
       <Button @click="onLandscapesButtonClicked" prepend-icon="fa-solid fa-tree" class="text-xl px-4 py-2 flex-1 md:flex-none">Landscapes</Button>
       <Button @click="onPortraitsButtonClicked" prepend-icon="fa-solid fa-user" class="text-xl px-4 py-2 flex-1 md:flex-none">Portraits</Button>
       <Button prepend-icon="fa-brands fa-square-instagram" class="text-xl px-4 py-2 flex-1 md:flex-none">Instagram</Button>
     </div>
-    
   </div>
 </template>
 
