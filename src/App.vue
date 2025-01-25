@@ -21,7 +21,7 @@ function closeModal() {
 
 <template>
   <app-container>
-    <Transition>
+    <Transition name="fade">
       <contact-modal v-if="isModalVisible" @closeModalClicked="closeModal" />
     </Transition>
     <app-header />
@@ -31,14 +31,14 @@ function closeModal() {
   </app-container>
 </template>
 
-<style scoped>
-.v-enter-active,
-.v-leave-active {
+<style>
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s ease;
 }
 
-.v-enter-from,
-.v-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

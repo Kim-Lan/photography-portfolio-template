@@ -32,21 +32,9 @@ function nextSlide() {
 <template>
   <div class="flex justify-center -z-50">
     <div v-for="(image, index) in props.images" :key="index" class="flex w-full h-full overflow-hidden absolute top-0 left-0">
-      <Transition>
+      <Transition name="fade">
         <img :src="image.src" :alt="image.alt" v-if="index === currentIndex" class="w-full object-cover" />
       </Transition>
     </div>
   </div>
 </template>
-
-<style scoped>
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-</style>

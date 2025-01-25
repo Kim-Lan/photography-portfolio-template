@@ -26,7 +26,7 @@ function closeGallery() {
   <div class="w-full h-full overflow-hidden p-4 md:p-6 gap-2 md:gap-4 flex flex-col justify-end md:grid home-grid">
     <!-- Gallery -->
     <div class="overflow-y-scroll hide-scroll rounded-lg md:col-span-2">
-      <Transition>
+      <Transition name="fade">
         <GalleryContainer v-if="showGallery" @closeGalleryClicked="closeGallery" :images="currentGallery" />
       </Transition>
     </div>
@@ -74,15 +74,5 @@ function closeGallery() {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr min-content;
   }
-}
-
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
 }
 </style>
